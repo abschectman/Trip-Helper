@@ -1,7 +1,7 @@
 # Trip-Helper
 
 
-Background and Overview
+## Background
 The goal of this project is to create a visualization of the foreign exchange rate and provide a translation tool to make accessing foreign information easier and more aschetically pleasing.
 
 ## Functionality and MVP Features
@@ -13,12 +13,12 @@ The goal of this project is to create a visualization of the foreign exchange ra
 BONUS
 Can Also fecth and display additional information on the selected country including current news stories
 ## Architecture and Technologies
-1 JavaScript
+#### JavaScript
 * Used to make GET requests to the APIs to recieve information
 * Used in styling the visiulazation/ Added and subtracting events and information
-2 D3
+#### D3
 
-3 GoogleMaps API, Rates API, GoogleTranslate API
+#### GoogleMaps API, Rates API, GoogleTranslate API
 * Used for fetching relevant data upon country selection
 
 ## Implementation Timeline
