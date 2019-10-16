@@ -10,7 +10,7 @@ The goal of this project is to create a visualization of the foreign exchange ra
 2. Users can use translation tool to translate into the language of the selected country
 3. Uses GoogleMaps API to select country on the globe
 4. When country is selected the globe spins to that location and the selected country is hilighted
-##### BONUS
+###### BONUS
 Can Also fetch and display additional information on the selected country including current news stories
 ## Architecture and Technologies
 #### JavaScript
