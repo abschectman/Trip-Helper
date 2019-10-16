@@ -17,10 +17,13 @@ Can Also fecth and display additional information on the selected country includ
 * Used to make GET requests to the APIs to recieve information
 * Used in styling the visiulazation/ Added and subtracting events and information
 #### D3
-
+* To incorparate data visualization, and aloow for interaction
 #### GoogleMaps API, Rates API, GoogleTranslate API
 * Used for fetching relevant data upon country selection
 
+## Wireframe
+The visualization consists of a single screen containing a map, a search bar and a section to display information.
+![alt text](https://github.com/abschectman/)
 ## Implementation Timeline
 #### Day 1:
 * Become familiar with the basics of D3
