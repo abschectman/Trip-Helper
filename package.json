@@ -1,0 +1,59 @@
+{
+  "name": "js_project_skeleton",
+  "version": "1.0.0",
+  "description": "skeleton for new JS project",
+  "main": "index.js",
+  "engines": {
+    "node": ">=8.1.0"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ],
+  "scripts": {
+    "start": "node app.js",
+    "start:debug": "DEBUG=* node app.js",
+    "webpack:start": "webpack-dev-server --config webpack.dev.js",
+    "webpack:watch": "webpack --watch --config webpack.dev.js",
+    "webpack:build": "webpack --config webpack.prod.js  --optimize-minimize"
+  },
+  "author": "mrcjbradley",
+  "license": "ISC",
+  "dependencies": {
+    "@amcharts/amcharts4": "^4.7.1",
+    "@amcharts/amcharts4-geodata": "^4.1.7",
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "autoprefixer": "^9.6.5",
+    "axios": "^0.18.1",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "d3": "^5.12.0",
+    "express": "^4.15.3",
+    "fibers": "^4.0.1",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-fetch": "^1.7.3",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
+    "sass": "^1.23.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2",
+    "webpack-merge": "^4.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abschectman/Trip-Helper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/abschectman/Trip-Helper/issues"
+  },
+  "homepage": "https://github.com/abschectman/Trip-Helper#readme"
+}
