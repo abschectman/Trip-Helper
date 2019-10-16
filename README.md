@@ -23,7 +23,7 @@ Can Also fecth and display additional information on the selected country includ
 
 ## Wireframe
 The visualization consists of a single screen containing a map, a search bar and a section to display information.
-![alt text](https://github.com/abschectman/)
+![](https://github.com/abschectman/Trip-Helper/blob/master/Screen%20Shot%202019-10-16%20at%2010.10.10%20AM.png)
 ## Implementation Timeline
 #### Day 1:
 * Become familiar with the basics of D3
