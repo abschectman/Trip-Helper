@@ -49,13 +49,14 @@ export const renderChart = (countryData, origin) => {
    background
      .append("g")
      .attr("transform", "translate(30, 420)")
+     .attr("x", function(data, i) {
+       return i * (barWidth + barOffset) + 40;
+     })
      .call(d3.axisBottom(scaleX));
-   var y = d3
-     .scaleLog()
-     .domain(0, 20000)
-     .range([0, 400]);
-
-   var y_axis = d3.axisLeft().scale(y);
+   
+   var y_axis = d3.axisLeft().scale(x).tickFormat(function (d) {
+        return x.tickFormat(4,d3.format(",d"))(d)
+})
 
    background
      .append("g")

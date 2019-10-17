@@ -29,10 +29,12 @@ window.addEventListener("DOMContentLoaded", () => {
  let countryData = data;
  if(destObject[0]){
     countryData[destObject[0]] = myJson.rates[destObject[1]]} else {
+      let holder = {}
    let keys = Object.keys(destination)
    for (let i = 0; i < keys.length; i++) {
-     countryData[keys[i]] = myJson.rates[destination[keys[i]]]   
+     holder[keys[i]] = myJson.rates[destination[keys[i]]]   
    }
+    countryData = holder
     }
   console.log(myJson);
   console.log(response);
