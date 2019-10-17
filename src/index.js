@@ -22,6 +22,7 @@ const destination = {
   "Turkey": "TRY"
 }
 const data = {};
+let arr = []
 window.addEventListener("DOMContentLoaded", () => {
   const display = async (destObject, orgObject) => {
  var response = await fetch("https://api.ratesapi.io/api/latest?base=USD");
@@ -43,16 +44,24 @@ window.addEventListener("DOMContentLoaded", () => {
   renderChart(countryData, origin);
   
     };
+
     renderMap();
     display(destination, origin)
 
     d3.selectAll(".destination")
     .on("change", function(){
       d3.select(this)
+      console.log(this.checked)
       let dest;
       if (this.checked){
-        dest = [this.name, destination[this.name]]} else {
+        dest = [this.name, destination[this.name]]
+        arr.push(parseInt(this.id))
+        renderMap(arr, true)
+      } else {
+        arr = arr.filter(id => id !== parseInt(this.id))
+        renderMap(arr, false)
         dest = [this.name, null]
+
       }
 
       display(dest, origin)

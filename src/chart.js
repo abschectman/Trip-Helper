@@ -28,13 +28,12 @@ export const renderChart = (countryData, origin) => {
      .append("svg")
      .attr("width", width)
      .attr("height", height)
-     .style("background", "#dff0d8");
    background
      .selectAll("rect")
      .data(data)
      .enter()
      .append("rect")
-     .style("fill", "#3c763d")
+     .style("fill", "#1DB954")
      .style("stroke", "#d6e9c6")
      .style("stroke-width", "5")
      .attr("width", barWidth)
@@ -42,7 +41,7 @@ export const renderChart = (countryData, origin) => {
        return x(data);
      })
      .attr("x", function(data, i) {
-       return (i * (barWidth + barOffset) + barOffset);
+       return i * (barWidth + barOffset) + barOffset;
      })
      .attr("y", function(data) {
        return height - x(data) - 28;
@@ -54,7 +53,7 @@ export const renderChart = (countryData, origin) => {
 
    background
      .append("g")
-     .attr("transform", "translate(0, 420)")
+     .attr("transform", "translate(0, 425)")
      .call(d3.axisBottom(scaleX));
    
    background

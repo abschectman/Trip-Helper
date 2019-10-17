@@ -1,5 +1,21 @@
 body {
-  color: green; }
+  background-color: black;
+  color: #1DB954; 
+}
+
+.xbox-container{
+      border: 0.5px solid #1DB954;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#map-holder{
+      display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
 
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvc3R5bGVzL2luZGV4LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBLGVBQWUiLCJmaWxlIjoibWFpbi5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJib2R5IHtcbiAgYmFja2dyb3VuZC1jb2xvcjogYmx1ZTtcbiAgY29sb3I6IGdyZWVuOyB9XG4iXSwic291cmNlUm9vdCI6IiJ9*/
