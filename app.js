@@ -3,22 +3,22 @@ const app = express();
 const path = require("path");
 const fetch = require("node-fetch");
 const PORT = process.env.PORT || 8000; // process.env accesses heroku's environment variables
-import * as d3 from "d3";
-// app.use(express.static("dist"));
+// import * as d3 from "d3";
+app.use(express.static("dist"));
 
-// app.get("/", (request, res) => {
-//   res.sendFile(path.join(__dirname, "./dist/index.html"));
-// });
+app.get("/", (request, res) => {
+  res.sendFile(path.join(__dirname, "./dist/index.html"));
+});
 const data = fetch("https://api.ratesapi.io/api/latest?base=USD")
-const ele = d3
-  .select("#app")
-  .selectAll("li")
-  .data(data)
-  .enter()
-  .append("li")
-  .text(function(d) {
-    return d;
-  });
+// const ele = d3
+//   .select("#app")
+//   .selectAll("li")
+//   .data(data)
+//   .enter()
+//   .append("li")
+//   .text(function(d) {
+//     return d;
+//   });
 
 
 // // create route to get single book by its isbn
@@ -50,7 +50,7 @@ const ele = d3
 //     });
 // });
 
-// app.listen(PORT, () => {
-//   console.log(__dirname);
-//   console.log(`listening on ${PORT}`);
-// });
+app.listen(PORT, () => {
+  console.log(__dirname);
+  console.log(`listening on ${PORT}`);
+});
