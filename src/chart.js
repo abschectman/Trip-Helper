@@ -5,14 +5,14 @@ export const renderChart = (countryData, origin) => {
    const data = Object.values(countryData).map(v => v * 10);
    //  the size of the overall svg element
    var height = 450,
-     width = 2120,
+     width = 700,
      //  the width of each bar and the offset between each bar
-     barWidth = 40,
-     barOffset = 20;
+     barWidth = 20,
+     barOffset = 25;
    var x = d3
-     .scaleLog()
+     .scaleLinear()
      .domain([d3.min(data), d3.max(data)])
-     .range([0, 400]);
+     .range([50, 400]);
 
     d3.select("#bar-chart > svg").remove()
 
@@ -36,7 +36,7 @@ export const renderChart = (countryData, origin) => {
        return x(data);
      })
      .attr("x", function(data, i) {
-       return (i * (barWidth + barOffset)) + 40;
+       return (i * (barWidth + barOffset) + barOffset);
      })
      .attr("y", function(data) {
        return height - x(data) - 28;
@@ -44,23 +44,19 @@ export const renderChart = (countryData, origin) => {
    const scaleX = d3
      .scaleBand()
      .domain(countries)
-     .range([0, width]);
+     .range([12.5, 12.5 + (data.length * (barWidth + barOffset))]);
 
    background
      .append("g")
-     .attr("transform", "translate(30, 420)")
-     .attr("x", function(data, i) {
-       return i * (barWidth + barOffset) + 40;
-     })
+     .attr("transform", "translate(0, 420)")
      .call(d3.axisBottom(scaleX));
    
-   var y_axis = d3.axisLeft().scale(x).tickFormat(function (d) {
-        return x.tickFormat(4,d3.format(",d"))(d)
-})
+   var y_axis = d3.axisLeft().scale(x)
+
 
    background
      .append("g")
-     .attr("transform", "translate(30, 0)")
+     .attr("transform", "translate(20, 0)")
      .call(y_axis);
 
 }
