@@ -55,7 +55,10 @@ window.addEventListener("DOMContentLoaded", () => {
       let dest;
       if (this.checked){
         dest = [this.name, destination[this.name]]
-        arr.push(parseInt(this.id))
+        this.id === "eur"
+          ? arr = arr.concat([616, 250, 300, 276, 352, 380, 756, 578, 528])
+          : arr.push(parseInt(this.id));
+        
         renderMap(arr, true)
       } else {
         arr = arr.filter(id => id !== parseInt(this.id))

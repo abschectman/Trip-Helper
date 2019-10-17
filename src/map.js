@@ -45,10 +45,7 @@ export function renderMap(arr = [], bool) {
         //  debugger
          return d;
        })
-       .on("click", function(d) {
-         debugger
-         rotateMe(d);
-       });
+     
          
        
 
