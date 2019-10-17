@@ -6,13 +6,13 @@ export function renderMap() {
     verticalTilt: 0,
     horizontalTilt: 0
   };
-  var width = 960;
-  var height = 500;
+  var width = 460;
+  var height = 300;
 
 
   var projection = d3
     .geoOrthographic()
-    .scale(200)
+    .scale(100)
     .translate([width / 2.2, height / 1.5]);
 
   var svg = d3
@@ -27,12 +27,11 @@ export function renderMap() {
     .attr("class", "water")
     .style("fill", "lightblue")
     .attr("d", path);
-  var g = svg.append("g");
-
-  var path = d3.geoPath().projection(projection);
-  d3.json("/data/countries.json").then(function(topology) {
-    g.selectAll("path")
-      .data(topojson.feature(topology, topology.objects.countries).features)
+    var g = svg.append("g");
+    var path = d3.geoPath().projection(projection);
+    const countries = topojson.feature(world, world.objects.countries).features
+      g.selectAll("path")
+      .data(countries)
       .enter()
       .append("path")
       .attr("fill", "red")
@@ -44,7 +43,6 @@ export function renderMap() {
       .on("click", function(d) {
         rotateMe(d);
       });
-  });
   let timer;
   function rotateGlobe() {
     timer = d3.timer(function(elapsed) {
