@@ -5,10 +5,10 @@ export const renderChart = (countryData, origin) => {
    const data = Object.values(countryData).map(v => v * 10);
    //  the size of the overall svg element
    var height = 450,
-     width = 700,
+     width = 750,
      //  the width of each bar and the offset between each bar
      barWidth = 20,
-     barOffset = 25;
+     barOffset = 28;
    var x = d3
      .scaleLinear()
      .domain([d3.min(data), d3.max(data)])
@@ -44,7 +44,7 @@ export const renderChart = (countryData, origin) => {
    const scaleX = d3
      .scaleBand()
      .domain(countries)
-     .range([12.5, 12.5 + (data.length * (barWidth + barOffset))]);
+     .range([14, 14 + (data.length * (barWidth + barOffset))]);
 
    background
      .append("g")
