@@ -31,7 +31,6 @@ export function renderMap(arr = [], bool) {
     var path = d3.geoPath().projection(projection);
     let countries = topojson.feature(world, world.objects.countries).features
     let c = countries.filter(count => count.id === arr[arr.length - 1]);
-   
      g
      .selectAll("path")
        .data(countries)
@@ -47,6 +46,7 @@ export function renderMap(arr = [], bool) {
          return d;
        })
        .on("click", function(d) {
+         debugger
          rotateMe(d);
        });
          
@@ -82,8 +82,9 @@ export function renderMap(arr = [], bool) {
     });
   }
   function stopGlobe() {
+    if(timer){
     timer.stop();
-  }
+  }}
   var rotateMe = function(d) {
     (function transition() {
       d3.transition()
@@ -103,6 +104,6 @@ export function renderMap(arr = [], bool) {
   if(!bool){
   rotateGlobe();
   } else{
-     rotateMe(c);
+     rotateMe(c[0]);
   }
 }
