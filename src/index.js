@@ -28,12 +28,17 @@ window.addEventListener("DOMContentLoaded", () => {
  var response = await fetch(`https://api.ratesapi.io/api/latest?base=${start}`);
  var myJson = await response.json();
  let countryData = data;
+ Object.keys(data).forEach(c => {
+   data[c] = myJson.rates[destination[c]]
+ })
  if(destObject[1]){
-    countryData[destObject[0]] = myJson.rates[destObject[1]]
+   countryData[destObject[0]] = myJson.rates[destObject[1]];
     data[destObject[0]] = myJson.rates[destObject[1]];
   } else if(destObject[1] === null) {
-      delete countryData[destObject[0]]
+      delete countryData[destObject[0]];
       delete data[destObject[0]];
+    } else if (Object.keys(data).length !== 0){
+      countryData = data
     } else {
       let holder = {}
    let keys = Object.keys(destination)
@@ -54,7 +59,6 @@ window.addEventListener("DOMContentLoaded", () => {
     d3.selectAll("select")
     .on("change", function(){
       d3.select(this)
-      
         display(data, destination[this.selectedOptions[0].value])
       
     })
