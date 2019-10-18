@@ -7,12 +7,12 @@ export function renderMap(arr = [], bool) {
     horizontalTilt: 0
   };
   var width = 460;
-  var height = 300;
+  var height = 400;
 
  d3.select("#map-holder > svg").remove();
   var projection = d3
     .geoOrthographic()
-    .scale(100)
+    .scale(200)
     .translate([width / 2.2, height / 1.5]);
 
   var svg = d3

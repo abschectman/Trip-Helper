@@ -24,13 +24,16 @@ const destination = {
 const data = {};
 let arr = []
 window.addEventListener("DOMContentLoaded", () => {
-  const display = async (destObject, orgObject) => {
- var response = await fetch("https://api.ratesapi.io/api/latest?base=USD");
+  const display = async (destObject, start = "USD") => {
+ var response = await fetch(`https://api.ratesapi.io/api/latest?base=${start}`);
  var myJson = await response.json();
  let countryData = data;
  if(destObject[1]){
-    countryData[destObject[0]] = myJson.rates[destObject[1]]} else if(destObject[1] === null) {
+    countryData[destObject[0]] = myJson.rates[destObject[1]]
+    data[destObject[0]] = myJson.rates[destObject[1]];
+  } else if(destObject[1] === null) {
       delete countryData[destObject[0]]
+      delete data[destObject[0]];
     } else {
       let holder = {}
    let keys = Object.keys(destination)
@@ -46,12 +49,20 @@ window.addEventListener("DOMContentLoaded", () => {
     };
 
     renderMap();
-    display(destination, origin)
+    display(destination)
+
+    d3.selectAll("select")
+    .on("change", function(){
+      d3.select(this)
+      
+        display(data, destination[this.selectedOptions[0].value])
+      
+    })
+
 
     d3.selectAll(".destination")
     .on("change", function(){
       d3.select(this)
-      console.log(this.checked)
       let dest;
       if (this.checked){
         dest = [this.name, destination[this.name]]
@@ -67,8 +78,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
       }
 
-      display(dest, origin)
+      display(dest)
     });
+
+
+   
 })
   
 
