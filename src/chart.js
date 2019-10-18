@@ -63,4 +63,21 @@ export const renderChart = (countryData, origin) => {
      .tickFormat(d => `${d}`)
      .ticks(2));
 
+     d3.selectAll("rect")
+     .on("mouseover", function(){
+       let val = this.__data__
+     let p =  d3.select("#val")
+      .append("p")
+      p.text(val)
+      p.attr("id", "val")
+     
+
+     })
+
+     d3.selectAll("rect")
+     .on("mouseleave", function(){
+
+       d3.selectAll("p").remove();
+     })
+
 }
