@@ -9,7 +9,6 @@ app.use(express.static("dist"));
 app.get("/", (request, res) => {
   res.sendFile(path.join(__dirname, "./dist/index.html"));
 });
-const data = fetch("https://api.ratesapi.io/api/latest?base=USD")
 // const ele = d3
 //   .select("#app")
 //   .selectAll("li")

@@ -21,6 +21,7 @@ const destination = {
   "Russia": "RUB",
   "Turkey": "TRY"
 }
+
 const data = {};
 let arr = []
 let start = "USD"
@@ -56,8 +57,7 @@ window.addEventListener("DOMContentLoaded", () => {
    }
     countryData = holder
     }
-  console.log(myJson);
-  console.log(response);
+
   renderChart(countryData, origin);
   
     };
@@ -99,7 +99,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
    
 })
-  
 
 
 

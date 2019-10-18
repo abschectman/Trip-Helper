@@ -8,7 +8,7 @@ export const renderChart = (countryData, origin) => {
      width = 750,
      //  the width of each bar and the offset between each bar
      barWidth = 20,
-     barOffset = 28;
+     barOffset = 32;
    var x = d3
      .scaleLog()
      .domain([d3.min(data), d3.max(data)])
@@ -43,12 +43,12 @@ export const renderChart = (countryData, origin) => {
        return i * (barWidth + barOffset) + barOffset;
      })
      .attr("y", function(data) {
-       return height - x(data) - 28;
+       return height - x(data) - 32;
      });
    const scaleX = d3
      .scaleBand()
      .domain(countries)
-     .range([14, 14 + (data.length * (barWidth + barOffset))]);
+     .range([16, 16 + (data.length * (barWidth + barOffset))]);
 
    background
      .append("g")
@@ -57,7 +57,7 @@ export const renderChart = (countryData, origin) => {
    
    background
      .append("g")
-     .attr("transform", "translate(25, 15)")
+     .attr("transform", "translate(25, 5)")
      .call(d3.axisLeft(yScale)
      .tickFormat(d => `${d}`)
      .ticks(2));
