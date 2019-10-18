@@ -23,8 +23,9 @@ const destination = {
 }
 const data = {};
 let arr = []
+let start = "USD"
 window.addEventListener("DOMContentLoaded", () => {
-  const display = async (destObject, start = "USD") => {
+  const display = async (destObject, start) => {
  var response = await fetch(`https://api.ratesapi.io/api/latest?base=${start}`);
  var myJson = await response.json();
  let countryData = data;
@@ -54,11 +55,12 @@ window.addEventListener("DOMContentLoaded", () => {
     };
 
     renderMap();
-    display(destination)
+    display(destination, start)
 
     d3.selectAll("select")
     .on("change", function(){
       d3.select(this)
+      start = destination[this.selectedOptions[0].value];
         display(data, destination[this.selectedOptions[0].value])
       
     })
@@ -82,7 +84,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
       }
 
-      display(dest)
+      display(dest, start)
     });
 
 
