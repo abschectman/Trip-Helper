@@ -38,6 +38,14 @@ window.addEventListener("DOMContentLoaded", () => {
   } else if(destObject[1] === null) {
       delete countryData[destObject[0]];
       delete data[destObject[0]];
+      if(Object.keys(data).length === 0){
+        let holder = {}
+   let keys = Object.keys(destination)
+   for (let i = 0; i < keys.length; i++) {
+     holder[keys[i]] = myJson.rates[destination[keys[i]]]   
+   }
+    countryData = holder
+      }
     } else if (Object.keys(data).length !== 0){
       countryData = data
     } else {
@@ -79,12 +87,13 @@ window.addEventListener("DOMContentLoaded", () => {
         renderMap(arr, true)
       } else {
         arr = arr.filter(id => id !== parseInt(this.id))
+       
         renderMap(arr, false)
         dest = [this.name, null]
 
       }
 
-      display(dest, start)
+       display(dest, start)
     });
 
 

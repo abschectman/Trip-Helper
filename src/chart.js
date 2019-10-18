@@ -13,7 +13,6 @@ export const renderChart = (countryData, origin) => {
      .scaleLog()
      .domain([d3.min(data), d3.max(data)])
      .range([15, 400]);
-  console.log(d3.max(data))
       
   var yScale = d3
         .scaleLog()

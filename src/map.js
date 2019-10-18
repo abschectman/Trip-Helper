@@ -46,26 +46,6 @@ export function renderMap(arr = [], bool) {
          return d;
        })
      
-         
-       
-
-    // countries = countries.filter(count => !arr.includes(count.id))
-    //   console.log("rendering red countries")
-    //   g
-    //   .selectAll("path")
-    //   .data(countries)
-    //   .enter()
-    //   .append("path")
-    //   .attr("fill", "red")
-    //   .attr("stroke", "#EDECF4")
-    //   .attr("d", path)
-    //   .style("fill", function(d) {
-    //     return d;
-    //   })
-    //   .on("click", function(d) {
-    //     rotateMe(d);
-    //   });
-
 
   let timer;
   function rotateGlobe() {
