@@ -41,3 +41,7 @@ select {
     outline: none;
 }
 
+#content{
+  display: flex;
+}
+

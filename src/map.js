@@ -21,12 +21,12 @@ export function renderMap(arr = [], bool) {
     .attr("width", width)
     .attr("height", height)
     .attr("class", "map");
-  // svg
-  //   .append("path")
-  //   .datum({ type: "Sphere" })
-  //   .attr("class", "water")
-  //   .style("fill", "lightblue")
-  //   .attr("d", path);
+  svg
+    .append("path")
+    .datum({ type: "Sphere" })
+    .attr("class", "water")
+    .style("fill", "lightblue")
+    .attr("d", path);
     var g = svg.append("g");
     var path = d3.geoPath().projection(projection);
     let countries = topojson.feature(world, world.objects.countries).features
