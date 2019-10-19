@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 8000; // process.env accesses heroku's environm
 app.use(express.static("dist"));
 
 app.get("/", (request, res) => {
-  res.sendFile(path.join(__dirname, "./dist/index.html"));
+  res.sendFile(path.join(__dirname, "./index.html"));
 });
 // const ele = d3
 //   .select("#app")
