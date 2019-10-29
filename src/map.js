@@ -6,8 +6,8 @@ export function renderMap(arr = [], bool) {
     verticalTilt: 0,
     horizontalTilt: 0
   };
-  var width = 460;
-  var height = 400;
+  var width = 450;
+  var height = 600;
 
  d3.select("#map-holder > svg").remove();
   var projection = d3
@@ -21,12 +21,12 @@ export function renderMap(arr = [], bool) {
     .attr("width", width)
     .attr("height", height)
     .attr("class", "map");
-  // svg
-  //   .append("path")
-  //   .datum({ type: "Sphere" })
-  //   .attr("class", "water")
-  //   .style("fill", "lightblue")
-  //   .attr("d", path);
+  svg
+    .append("path")
+    .datum({ type: "Sphere" })
+    .attr("class", "water")
+    .style("fill", " rgb(3, 1, 19)")
+    .attr("d", path);
     var g = svg.append("g");
     var path = d3.geoPath().projection(projection);
     let countries = topojson.feature(world, world.objects.countries).features

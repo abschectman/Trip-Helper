@@ -6,12 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css" />
     <script src="./dist/countries.geo.json"></script>
-    <title>Document</title>
+    <script src="https://kit.fontawesome.com/a279d8d5dd.js" crossorigin="anonymous"></script>
+    <title>Trip-Helper</title>
   </head>
 
   <body>
     <div id="app">
       <div id='content'>
+        <div id="info">
+            <nav id="nav">
+              <br>
+              <span>Foreign Exchange Visualization by Asher Schectman</span>
+              <br><br>
+              <span>Email: abschectman@gmail.com</span>
+              <ul class="container">
+                <li><a href="https://www.linkedin.com/in/asher-schectman-b24a2b195?trk=people-guest_profile-result-card_result-card_full-click"
+                    target="_blank" class="fab fa-linkedin fa-3x"></a> <a
+                    href="https://www.linkedin.com/in/asher-schectman-b24a2b195?trk=people-guest_profile-result-card_result-card_full-click"
+                    target="_blank">LinkedIn</a></li>
+                <li><a href="https://angel.co/asher-schectman" target="_blank" class="fab fa-angellist fa-3x"></a>
+                  <a href="https://angel.co/asher-schectman" target="_blank">AngelList </a></li>
+                <li><a href="https://github.com/abschectman" target="_blank" class="fab fa-github-square fa-3x"></a>
+                  <a href="https://github.com/abschectman" target="_blank">Github</a></li>
+                <li><a href="https://abschectman.github.io/" target="_blank" class="fas fa-laptop-code fa-3x"></a>
+                  <a href="https://abschectman.github.io/" target="_blank">Website</a></li>
+              </ul>
+            </nav>
+        </div>
         <div id="map-holder">
 
         </div>
@@ -19,7 +40,7 @@
         <div className='content-right'>
           <div class='xbox-container'>
             <div class="origin">
-              <h2 id="val"></h2>
+              <div id="val"></div>
               <h3>Select Origin:</h3>
             <select name="" id="">
               <option value="United States">United States</option>

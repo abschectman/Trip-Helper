@@ -4,7 +4,7 @@ import { renderMap } from "../src/map";
 import { renderChart } from "./chart";
 // let map = am4core.create("chartdiv", am4maps.MapChart);
 // map.geodata = am4geodata_worldLow;
-const destination = {
+export const destination = {
   England: "GBP",
   "Hong Kong": "HKD",
   India: "INR",
@@ -60,7 +60,7 @@ export const star = () => {
       countryData = holder;
     }
 
-    renderChart(countryData, origin);
+    renderChart(countryData, start);
   };
 
   renderMap();

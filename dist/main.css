@@ -29,8 +29,13 @@ body {
 
 #val{
   position: absolute;
-    left: 35px;
+    top: 17px;
+    left: 275px;
     font-weight: normal;
+}
+
+#val > p{
+  width: 160px;
 }
 
 select {
@@ -45,3 +50,36 @@ select {
   display: flex;
 }
 
+li{
+  list-style: none;
+  cursor: pointer;
+  padding: 15px;
+}
+
+.container{
+  display: flex;
+}
+
+#info{
+  border: 0.5px solid #1DB954;
+  width: 480px;
+  height: 200px;
+  position: absolute;
+}
+
+#nav > span{
+  padding-left: 25px;
+  font-size: 20px;
+}
+
+li > a{
+  color: rgb(29, 185, 84);
+  text-decoration: none;
+  padding-top: 3px;
+}
+
+.container > li{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
