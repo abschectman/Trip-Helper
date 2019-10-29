@@ -75,15 +75,18 @@ export const star = () => {
   d3.selectAll(".destination").on("change", function() {
     d3.select(this);
     let dest;
+    let eur = [616, 250, 300, 276, 352, 380, 756, 578, 528];
     if (this.checked) {
       dest = [this.name, destination[this.name]];
       this.id === "eur"
-        ? (arr = arr.concat([616, 250, 300, 276, 352, 380, 756, 578, 528]))
+        ? (arr = arr.concat(eur))
         : arr.push(parseInt(this.id));
 
       renderMap(arr, true);
     } else {
-      arr = arr.filter(id => id !== parseInt(this.id));
+      this.id === "eur" 
+      ? (arr = arr.filter(id => !eur.includes(id)))
+      : arr = arr.filter(id => id !== parseInt(this.id));
 
       renderMap(arr, false);
       dest = [this.name, null];
