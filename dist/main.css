@@ -47,13 +47,14 @@ select {
 }
 
 #content{
+  font-family: monospace;
   display: flex;
 }
 
 li{
   list-style: none;
   cursor: pointer;
-  padding: 15px;
+  padding: 10px;
 }
 
 .container{
@@ -68,8 +69,13 @@ li{
 }
 
 #nav > span{
-  padding-left: 25px;
-  font-size: 20px;
+  margin-left: 25px;
+  font-size: 18px;
+}
+
+#nav{
+  display: flex;
+  flex-direction: column;
 }
 
 li > a{
