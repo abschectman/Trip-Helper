@@ -85,6 +85,10 @@ li > a{
   padding-top: 3px;
 }
 
+li > a:hover{
+  color: rgb(76, 255, 139);
+}
+
 .container > li{
   display: flex;
   flex-direction: column;
