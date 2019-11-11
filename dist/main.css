@@ -59,6 +59,7 @@ li{
 
 .container{
   display: flex;
+  margin-left: 25px;
 }
 
 #info{
@@ -70,7 +71,7 @@ li{
 
 #nav > span{
   margin-left: 25px;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 #nav{
